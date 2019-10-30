@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular</title>
+<script src="angular.js"></script>
+
+
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl" >
+		
+<button ng-click="clickme()">Click Me</button>
+
+<ul ng-hide="showme">
+	<li ng-repeat="x in names">
+		{{x}}
+	</li>
+</ul>
+	</div>
+
+</body>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.names=['sahi pneer','chhole bature','dal makhni','soya chap'];
+    $scope.showme=false;
+
+     $scope.clickme=function(){
+
+     	 $scope.showme = !$scope.showme;
+
+     }
+});
+</script>
+</html>

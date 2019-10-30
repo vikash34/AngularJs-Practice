@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>-->
+    <script src="angular.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<p>Change the value of the input field:</p>
+<!--
+<script>
+var app = angular.module("myShoppingList", []); 
+app.controller("myCtrl", function($scope) {
+    $scope.products = ["Milk", "Bread", "Cheese"];
+    $scope.addItem = function () {
+        $scope.products.push($scope.addMe);
+    }
+    $scope.removeItem = function (x) {
+        $scope.products.splice(x, 1);
+    } 
+});
+</script>
+-->
+
+<div ng-app="" >
+    
+    <table>
+    <tr>
+        <td>Name</td>
+        <td><input type="text" ng-model="name"></td>
+
+        </tr>
+        <tr>
+        <td>Address</td>
+        <td><input type="text" ng-model="address"></td>
+
+        </tr>
+        <tr>
+        <td>Phone No</td>
+        <td><input type="number" ng-model="phone"></td>
+
+        </tr>
+        <tr>
+        <td>Dob</td>
+        <td><input type="date" ng-model="dob"></td>
+
+        </tr>
+        <tr>
+        
+        <td><input type="submit" ng-click="message=name+ ' '+ address+ ' '+ phone+ ' '+ dob"></td>
+          <td>{{message}}</td> 
+
+        </tr>
+        
+
+        </tr>
+    </table>
+
+</div>
+
+
+</body>
+</html>

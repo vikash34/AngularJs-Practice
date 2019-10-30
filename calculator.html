@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="calculator_script.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body style="background-image: url('program.jpg')">
+	<nav class="nav navbar-default">
+	<div class="container">
+		<div class="row">
+			<div class="navbar-heading">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynav">
+					<span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+				<div class="navbar-brand"><span style="font-size: 40px; ">My Site</span></div>
+			</div>
+			<div class="collapse navbar-collapse" id="mynav">
+			<ul class="nav navbar-nav navbar-right" style="font-size: 20px;">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Service</a></li>
+				<li><a href="#">Gallery</a></li>
+				<li><a href="#">Contact Us</a></li>
+
+
+			</ul>
+		</div>
+	</div>
+	</div>
+</nav>
+<br>
+</br>
+<div class="container-fluid" ng-app="">
+	<div class="row">
+	
+
+		<div class="col-md-4"></div>
+		<div class="col-md-4" style="background: #0B478E;">
+			<div class="form-group">
+				<h1 align="center" style="text-decoration-color: white">My Calculator</h1>
+				
+				<input type="number" class="form-control" ng-model="InsertValue">
+                <br>
+                <div class="row">
+                <div class="col-md-12">
+                <div class="col-md-4"><button class="form-control" ng-click="back()">Back</button></div>
+                <div class="col-md-4"><button class="form-control" ng-click="reset()">Reset</button></div>
+                <div class="col-md-4"><button class="form-control" ng-click="getvalue()">GetValue</button></div>
+                </div>
+            </div>
+                <br>
+                <div class="row">
+                <div class="col-md-12">
+                <div class="col-md-3"> <button class="form-control" ng-click="InsertValue=InsertValue+ '+'' 1">1</button></div>
+                <div class="col-md-3"><button class="form-control" ng-click="InsertValue=InsertValue+ 2">2</button></div>
+                <div class="col-md-3"><button class="form-control" ng-click="InsertValue=InsertValue+ 3">3</button></div>
+               <div class="col-md-3"> <button class="form-control" ng-click="InsertValue=InsertValue+ 4">Plus</button></div>
+                </div>
+            </div>
+                <br>
+                  <div class="row">
+                <div class="col-md-12">
+                <div class="col-md-3"> <button class="form-control" ng-click="">4</button></div>
+                <div class="col-md-3"><button class="form-control" ng-click="">5</button></div>
+                <div class="col-md-3"><button class="form-control" ng-click="">6</button></div>
+               <div class="col-md-3"> <button class="form-control" ng-click="">Min</button></div>
+                </div>
+            </div>
+                <br>
+                  <div class="row">
+                <div class="col-md-12">
+                <div class="col-md-3"> <button class="form-control" ng-click="">7</button></div>
+                <div class="col-md-3"><button class="form-control" ng-click="">8</button></div>
+                <div class="col-md-3"><button class="form-control" ng-click="">9</button></div>
+               <div class="col-md-3"> <button class="form-control" ng-click="">Mul</button></div>
+                </div>
+            </div>
+                <br>
+                 <div class="row">
+                <div class="col-md-12">
+                <div class="col-md-3"> <button class="form-control" ng-click="">00</button></div>
+                <div class="col-md-3"><button class="form-control" ng-click="">0</button></div>
+                <div class="col-md-3"><button class="form-control" ng-click="">.</button></div>
+               <div class="col-md-3"> <button class="form-control" ng-click="">Div</button></div>
+                </div>
+            </div>
+                <br>
+			</div>
+		</div>
+		<div class="col-md-4"></div>
+
+	</div>
+</div>
+</body>
+</html>

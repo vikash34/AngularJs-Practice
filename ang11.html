@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Angular Js</title>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+    <body>
+        <div class="container" style="padding-top:20px;">
+            <div ng-app="myApp" ng-controller="myController">
+            <p>From Service: {{serviceName}}</p>
+            <p>From Factory: {{factoryName}}</p>
+            <p>From Provider: {{providerName}}</p>
+            </div>
+            </div>
+            <script>
+                var app=angular.module('myApp',[]);
+
+                app.service('myService', function(){
+                  this.name="";
+                  this.setName=function(x){
+                      this.name=x;
+                      return this.name;
+                  };
+                });
+                app.factory('myfactory',function(){
+                    serviceN={};
+                    serviceN.name=""
+                    serviceN.setName=function(x){
+                        serviceN.name=x;
+                    
+                  };
+                  return serviceN;
+                });
+
+                app.controller('myController',function($scope,myService,myfactory){
+
+                 $scope.serviceName=myService.setName("vikash");
+                 
+                 myfactory.setName("Saksham Chauhan");
+                 $scope.factoryName = myfactory.name;
+
+
+                 $scope.providerName="provider";
+
+                });
+            </script>
+              
+    </body>
+    
+</html>

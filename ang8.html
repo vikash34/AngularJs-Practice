@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<body ng-app="myApp" ng-controller="myctrl">
+
+<p><a href="#">Main</a></p>
+
+<a href="#!tomato">Tomato</a>
+<a href="#!banana">Banana</a>
+
+<p>Click on the links to change the content.</p>
+
+<p>Use the "otherwise" method to define what to display when none of the links are clicked.</p>
+
+<div ng-view></div>
+<p ng-bind="date | date:'MM/dd/yyyy @ h:mma'"></p>
+<p ng-bind="name"></p>
+
+
+<script>
+    var app=angular.module('myApp',["ngRoute"]);
+    app.value('val1',4000);
+    app.controller('myctrl',function($scope,val1){
+        $scope.date=new  Date();
+        $scope.name=val1;
+
+    });
+    app.config(function($routeProvider){
+        $routeProvider
+        .when("/tomato",{
+            template: "<h1>Hello</h1>"
+        })
+        .when("/banana",{
+            template: "<h1>Hello2</h1>"
+        })
+        .otherwise({
+            template: "<h1>Hello3</h1>"
+        });
+        
+    });
+    </script>
+</body>
+</html>

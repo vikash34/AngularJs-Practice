@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular JS</title>
+	<script src="angular.js"></script>
+</head>
+<body >
+<form name="myform" ng-app="">
+<input type="email" name="name" ng-model="firstname">
+<br>
+<br><br><br>
+<span ng-show="myform.name.$error.email">Not a Valid Email</span>
+
+</form>
+
+
+</body>
+
+</html>

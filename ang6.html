@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Angular</title>
+  <script src="angular.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl" >
+<!--	<h1>{{names}}</h1>-->
+        <br><br>
+        <div align="center">
+        Search: <input type="text" ng-model="search" align="center">
+        </div>
+        <br><br>
+        
+	<table border="1px;" cellpadding="0" cellspacing="0" align="center">
+      <tr>
+        <th>&#9998; Srno</th>
+        <th ng-click="orderBY('Name')">&#9998;Name</th>
+        <th ng-click="orderBY('City')">&#9998;City</th>
+        <th ng-click="orderBY('Country')">&#9998;Country</th>
+      </tr>
+      <tr ng-repeat=" x in names | filter:search |orderBy:myorder">
+        <td ng-if="$odd" bgcolor="f1f1f1">{{$index+1}}</td>
+        <td ng-if="$even">{{$index+1}}</td>
+		<td ng-if="$odd" bgcolor="f1f1f1">{{x.Name | uppercase}}</td>
+        <td ng-if="$even">{{x.Name | uppercase}}</td>
+		<td ng-if="$odd" bgcolor="f1f1f1">{{x.City | uppercase}}</td>
+        <td ng-if="$even">{{x.City | uppercase}}</td>
+        <td ng-if="$odd" bgcolor="f1f1f1">{{x.Country | uppercase}}</td>
+        <td ng-if="$even">{{x.Country | uppercase}}</td>
+
+      </tr>
+	</table>	
+	</div>
+</body>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+	var url="customers.php";
+   $http.get(url).then(function(response){
+   	$scope.names=response.data;
+   });
+    $scope.orderBY=function(x)
+    {
+        $scope.myorder=x;
+    }
+});
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ANgular</title>
+</head>
+<script src="angular.js"></script>
+<body>
+	<div ng-app=""  ng-init="names=[
+	 {name:'vikash',class:'8',country:'india',price:'500'},
+	 {name:'aksh',class:'8',country:'india',price:'600'},
+	 {name:'akash',class:'8',country:'india',price:'700'},
+	 {name:'vishal',class:'8',country:'india',price:'800'}
+
+
+
+	]">
+<br>
+<br>
+
+	<table border="1 px" cellpadding="0" cellspacing="0" height="200px" width="200px" align="center">
+		<tr>
+			<th>SrNo</th>
+			<th>Name</th>
+			<th>Country</th>
+			<th>Price</th>
+		
+
+		</tr>
+		<tr ng-repeat="x in names | orderBy:'name'">
+			<td ng-if="$odd" bgcolor="#f1f1f1">Srno {{$index+1}}</td>
+			<td ng-if="$even"  >Srno {{$index+1}}</td>
+
+			<td ng-if="$odd" bgcolor="#f1f1f1">{{x.name | uppercase}}</td>
+			<td  ng-if="$even">{{x.name | uppercase}}</td>
+
+			<td ng-if="$odd" bgcolor="#f1f1f1">{{x.country|uppercase}}</td>
+			<td  ng-if="$even">{{x.country|uppercase}}</td>
+
+			<td ng-if="$odd" bgcolor="#f1f1f1">{{x.price|currency:'INR'}}</td>
+			<td  ng-if="$even">{{x.price|currency:'INR'}}</td>
+
+
+		</tr>
+	</table>
+
+</div>
+</body>
+
+</html>

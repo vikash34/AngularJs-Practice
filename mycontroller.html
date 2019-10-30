@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Controller Program</title>
+      <script src="angular.js"></script>
+        <script src="controllerscript.js"></script>
+
+    
+    
+    </head>
+    
+<body align="center">
+    <div ng-app="mymodule">
+    <div ng-controller="headingcontroller">
+      {{heading}} 
+        </div>
+        </br>
+    <div ng-controller="datacontroller">
+        <table align="center">
+        <tr>
+           <td>Name</td>
+          <td>Roll No</td>
+            <td>class</td>
+           <td>Phone No</td>
+
+            </tr>
+            <tr ng-repeat="student in student_master"| orderBy:name>
+                 <td>{{student.name}}</td>
+                 <td>{{student.roll}}</td>
+                 <td>{{student.class}}</td>
+                 <td>{{student.phone}}</td>
+
+            
+            </tr>
+        </table>
+    
+    </div>
+         </div>
+    </body>
+</html>

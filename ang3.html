@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ANgular</title>
+</head>
+<script src="angular.js"></script>
+<body>
+	<div ng-app=""  ng-init="names=[
+	 {name:'vikash',class:'8',country:'india',price:'500'},
+	 {name:'aksh',class:'8',country:'india',price:'600'},
+	 {name:'akash',class:'8',country:'india',price:'700'},
+	 {name:'vishal',class:'8',country:'india',price:'800'}
+
+
+
+	]">
+<br>
+<br>
+<input type="text" name="test" ng-model="test">
+
+<ul>
+	<li ng-repeat="x in names | filter:test" >{{x.name }}</li>
+</ul>
+
+</div>
+</body>
+
+</html>
